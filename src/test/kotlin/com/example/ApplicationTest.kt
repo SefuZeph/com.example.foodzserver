@@ -22,8 +22,8 @@ class ApplicationTest {
             configureRouting()
         }
         client.get("/").apply {
-            assertEquals(HttpStatusCode.OK, status)
-            assertEquals("Hello World!", bodyAsText())
+            assertEquals(expected = HttpStatusCode.OK, actual = status)
+            assertEquals(expected = "Welcome to Restaurant API!", actual = bodyAsText())
         }
     }
 }
