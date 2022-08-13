@@ -8,9 +8,6 @@ interface RestaurantRepository {
 
     val page1: List<Restaurants>
     val page2: List<Restaurants>
-    val page3: List<Restaurants>
-    val page4: List<Restaurants>
-    val page5: List<Restaurants>
 
     /**
      *  Get all the restaurant from database
