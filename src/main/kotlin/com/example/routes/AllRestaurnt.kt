@@ -1,17 +1,22 @@
 package com.example.routes
 
 import com.example.models.ApiResponse
+import com.example.repository.RestaurantRepository
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import org.koin.ktor.ext.inject
 
 fun Route.getAllRestaurant() {
+    val restaurantRepository: RestaurantRepository by inject()
+
     get("/restaurant") {
         try {
             val page = call.request.queryParameters["page"]?.toInt() ?: 1
             require(page in 1..2)
-            call.respond(message = page)
+            val apiRepository = restaurantRepository.getAllRestaurant(page)
+            call.respond(message = apiRepository, status = HttpStatusCode.OK)
         } catch (e: NumberFormatException) {
             call.respond(
                 message = ApiResponse(success = false, message = "Only Numbers Allowed"),

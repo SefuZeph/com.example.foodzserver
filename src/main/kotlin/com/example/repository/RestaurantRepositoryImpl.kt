@@ -3,6 +3,9 @@ package com.example.repository
 import com.example.models.ApiResponse
 import com.example.models.Restaurants
 
+const val NEXT_PAGE_KEY = "nextPage"
+const val PREVIOUS_PAGE_KEY = "prevPage"
+
 class RestaurantRepositoryImpl : RestaurantRepository {
 
     override val restaurant: Map<Int, List<Restaurants>> by lazy {
@@ -55,6 +58,26 @@ class RestaurantRepositoryImpl : RestaurantRepository {
     )
 
     override suspend fun getAllRestaurant(page: Int): ApiResponse {
-        TODO("Not yet implemented")
+        return ApiResponse(
+            success = true,
+            message = "ok",
+            prevPage = calculatePage(page)[PREVIOUS_PAGE_KEY],
+            nextPage = calculatePage(page)[NEXT_PAGE_KEY],
+            restaurants = restaurant[page]!!
+        )
+    }
+
+    private fun calculatePage(page: Int): Map<String, Int?> {
+        var prevPage: Int? = page
+        var nextPage: Int? = page
+
+        if (page == 1) {
+            prevPage = null
+        }
+
+        if (page == 2) {
+            nextPage = null
+        }
+        return mapOf(PREVIOUS_PAGE_KEY to prevPage, NEXT_PAGE_KEY to nextPage)
     }
 }
