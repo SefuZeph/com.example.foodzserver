@@ -29,6 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-default-headers:$ktor_version")
+    implementation("io.ktor:ktor-server-status-pages:$ktor_version")
     implementation ("io.insert-koin:koin-ktor:3.2.0")
     implementation( "io.insert-koin:koin-logger-slf4j:3.2.0")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
