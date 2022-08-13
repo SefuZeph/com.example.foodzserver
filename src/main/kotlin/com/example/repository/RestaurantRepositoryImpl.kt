@@ -14,20 +14,20 @@ class RestaurantRepositoryImpl : RestaurantRepository {
             name = "Inca Restaurant",
             location = "The Social House Nairobi",
             rating = 4.5,
-            foodImage = "/images/inca.jpg"
+            foodImage = "/images/inca.png"
         ), Restaurants(
             id = 2,
             name = "Fogo Gaucho",
             location = "Viking House, Waiyaki Way, Nairobi",
             rating = 4.6,
-            foodImage = "/images/fogo.jpg"
+            foodImage = "/images/fogo.png"
         ),
         Restaurants(
             id = 3,
             name = "Mawimbi Seafood Restaurant & Cafè",
             location = "Longonot Place, Kijabe St, Nairobi",
             rating = 4.6,
-            foodImage = "/images/mawimbi.jpg"
+            foodImage = "/images/mawimbi.png"
         )
     )
 
@@ -43,14 +43,14 @@ class RestaurantRepositoryImpl : RestaurantRepository {
             name = "La Salumeria Restaurant",
             location = "Korosho Rd, Dhajay Apartments, ",
             rating = 4.4,
-            foodImage = "/images/la.jpg"
+            foodImage = "/images/la.png"
         ),
         Restaurants(
             id = 6,
             name = "Ankole Grill Kilimani",
             location = "Galana Rd, Nairobi",
             rating = 4.5,
-            foodImage = "/images/mawimbi.jpg"
+            foodImage = "/images/ankole.png"
         )
     )
 
